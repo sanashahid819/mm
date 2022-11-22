@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    <input type="text" id="mytable">
+    <input type="text" id="quantity">
+    <input type="text" id="price">
+    <br>
+    <input type="button" value="sumbit" onclick="appen()" id="sumbit">
+    <br>
+    <table id="mytable2">
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>quantity</th>
+                <th>price</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <script>
+        function appen(){
+            var a = $("#mytable").val();
+            var b = $("#quantity").val();
+            var c = $("#price").val();
+            $("#mytable2 tbody").append("<tr><td>"+ a +"</td><td>"+ b +"</td><td>" + c*b +"</td></tr>");
+            $("#mytable").val('');
+            $("#quantity").val('');
+            $("#price").val('');
+
+        }
+    </script>
+</body>
+</html>
