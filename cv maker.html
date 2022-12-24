@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+body{
+background-image:url(images/pexels-pixabay-210205.jpg); 
+
+} 
+.contact-form{ 
+    background-color:rgb(48, 42, 42,0.5);
+    height: 650px;
+   margin-top:150px;
+  padding: 50px;
+
+  
+        
+    }
+.contact-form .textarea{ 
+    min-height:220px; 
+    resize:none;
+}
+.form-control{ 
+    box-shadow:none; 
+    border-color:#eee; 
+    height:49px;
+}
+.form-control:focus{ 
+    box-shadow:none; 
+    border-color:#00b09c;
+}
+.form-control-feedback{ 
+    line-height:50px;
+}
+.main-btn{ 
+    background:#00b09c; 
+    border-color:#00b09c; 
+    color:#fff;
+}
+.main-btn:hover{ 
+    background:#00a491;
+    color:#fff;
+}
+.copyright {
+  font: 200 14px 'Oswald', sans-serif;
+  color:black;
+  letter-spacing: 1px;
+  text-align: center;
+}
+span{
+    color: red;
+    
+}
+
+
+    </style>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+<body>
+<div class="container">
+	<div class="row">
+		<form role="form" id="contact-form" class="contact-form">
+            <h1 class="section-header">Contact us</h1>
+                    <div class="row">
+                		<div class="col-lg-3 col-md-4 col-sm-12 m-4">
+                  		<div class="form-group">
+                            <img src="images/people.png" style="margin-bottom: 10px;"  alt="" height="30px"> 
+                            <input type="text" class="form-control" name="Name" autocomplete="off" id="i_n"  placeholder="Name">
+                            <br>
+                            <span id="s_n"></span>
+                  	
+                        </div>
+                  	</div>
+                    	<div class="col-lg-3 col-md-4 col-sm-12 m-4">
+                  		<div class="form-group">
+                            <img src="images/mail.png" style="margin-bottom: 10px;" alt="" height="30px">
+                            <input type="email" class="form-control" name="email" autocomplete="off" placeholder="E-mail"  id="i_e" >
+                            <br>
+                            <span id="s_e"></span>
+                  		</div>
+                  	</div>
+                  	</div>
+                  	<div class="row">
+                  		<div class="col-lg-3 col-md-4 col-sm-12 m-4">
+                  		<div class="form-group">
+                            <img src="images/email.png" style="margin-bottom: 10px;" alt="" height="30px">
+                            <textarea class="form-control textarea" rows="3" name="Message"  placeholder="Message"></textarea>
+                  		</div>
+                  	</div>
+                    </div>
+                    <div class="row">
+                    <div class="col-lg-3 col-md-4 col-sm-12 m-4">
+                  <button type="submit" class="btn main-btn pull-right" onclick="fun()">Send a message</button>
+                  </div>
+                  </div>
+                  
+
+            
+                   
+            
+                    <div class="copyright">&copy; ALL OF THE RIGHTS RESERVED</div>
+            
+                  </div>
+                
+              </div>
+              <div id="main"></div>
+                </form>
+	</div>
+</div>
+<script>
+    function fun(){
+      var name = document.getElementById("i_n").value;
+      var email = document.getElementById("i_e").value;
+ if( name=="sana" && email=="sana@gmail.com"){
+    document.getElementById("main").innerHTML = "welcome "+name;
+    document.getElementById("s_n").innerHTML = "  ";
+    document.getElementById("s_e").innerHTML = " ";
+ }
+else if( name!=="sana" && email!="sana@gmail.com"){
+    document.getElementById("s_n").innerHTML = " name is not correct ";
+    document.getElementById("s_e").innerHTML = "  invalid email address ";
+    document.getElementById("main").innerHTML = " ";
+}
+
+else if( name!="sana" && email=="sana@gmail.com"){
+    document.getElementById("s_e").innerHTML = "  ";
+    document.getElementById("s_n").innerHTML = "name is not correct  ";
+    document.getElementById("main").innerHTML = " ";
+}
+
+else if( name="sana" && email!="sana@gmail.com"){
+    document.getElementById("s_e").innerHTML = " invalid email address ";
+    document.getElementById("s_n").innerHTML = "  ";
+    document.getElementById("main").innerHTML = " ";
+}
+    }
+</script>
+</body>
+</html>
